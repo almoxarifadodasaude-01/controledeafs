@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Setores - Almoxarifado da Saúde</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-slate-50 flex h-screen overflow-hidden text-slate-800">
+
+    <!-- Menu Lateral Oficial -->
+    <aside class="w-64 bg-blue-800 text-white flex flex-col shadow-lg z-10">
+        <div class="p-4 text-center border-b border-blue-700">
+            <h2 class="text-lg font-bold uppercase tracking-wider">Almoxarifado</h2>
+            <p class="text-xs text-blue-300">Controle Interno de AFs</p>
+        </div>
+        <nav class="flex-1 p-4 space-y-2">
+            <a href="dashboard.html" class="block py-2.5 px-4 rounded transition hover:bg-blue-700">Início</a>
+            <a href="afs.html" class="block py-2.5 px-4 rounded transition hover:bg-blue-700">Autorizações (AFs)</a>
+            <a href="fornecedores.html" class="block py-2.5 px-4 rounded transition hover:bg-blue-700">Fornecedores</a>
+            <a href="setores.html" class="block py-2.5 px-4 rounded transition bg-blue-900 font-medium">Setores</a>
+        </nav>
+    </aside>
+
+    <!-- Conteúdo Principal -->
+    <main class="flex-1 p-6 overflow-y-auto">
+        
+        <header class="bg-white p-5 rounded-lg border border-slate-200 border-l-4 border-l-blue-600 mb-6 shadow-sm">
+            <h1 class="text-xl font-bold text-slate-800 uppercase">Gestão de Setores</h1>
+            <h2 class="text-sm font-semibold text-slate-600">Gerencie os departamentos e suas cores de identificação</h2>
+        </header>
+
+        <div class="grid grid-cols-1 lg:grid-cols-3 gap-6">
+            
+            <!-- Formulário de Setores -->
+            <div class="bg-white p-6 rounded-xl shadow-sm border border-slate-200 h-fit">
+                <h3 class="text-base font-bold text-slate-800 mb-4 border-b pb-2" id="form-title">Adicionar Novo Setor</h3>
+                
+                <form id="form-setor" class="space-y-4">
+                    <input type="hidden" id="edit_id" value="">
+                    
+                    <div>
+                        <label class="block text-xs font-semibold text-slate-600 mb-1">Nome do Setor *</label>
+                        <input type="text" id="nome" required placeholder="Ex: Farmácia Judicial" class="w-full px-3 py-2 border border-slate-300 rounded-md focus:ring-blue-500 text-sm outline-none">
+                    </div>
+                    
+                    <div>
+                        <label class="block text-xs font-semibold text-slate-600 mb-1">Cor de Identificação *</label>
+                        <div class="flex gap-2 items-center">
+                            <input type="color" id="cor" value="#2563eb" class="h-10 w-16 p-1 border border-slate-300 rounded-md cursor-pointer">
+                            <span class="text-xs text-slate-500">Escolha uma cor para a etiqueta</span>
+                        </div>
+                    </div>
+
+                    <div class="flex gap-2 pt-2">
+                        <button type="button" id="btn-cancelar" class="hidden flex-1 bg-slate-100 hover:bg-slate-200 text-slate-700 px-4 py-2 rounded-md font-bold text-sm transition border border-slate-300">
+                            Cancelar
+                        </button>
+                        <button type="submit" id="btn-salvar" class="flex-1 bg-blue-600 hover:bg-blue-700 text-white px-4 py-2 rounded-md font-bold text-sm transition shadow-sm">
+                            Salvar Setor
+                        </button>
+                    </div>
+                </form>
+            </div>
+
+            <!-- Lista de Setores -->
+            <div class="lg:col-span-2 bg-white rounded-xl shadow-sm border border-slate-200 overflow-hidden">
+                <div class="p-4 border-b bg-slate-50">
+                    <h2 class="text-sm font-bold text-slate-700 uppercase">Setores Ativos</h2>
+                </div>
+                <div class="overflow-x-auto">
+                    <table class="w-full text-left border-collapse">
+                        <thead>
+                            <tr class="bg-slate-100 text-slate-600 text-xs uppercase tracking-wider border-b border-slate-200">
+                                <th class="p-3 font-semibold">Identificador</th>
+                                <th class="p-3 font-semibold w-32 text-center">Ações</th>
+                            </tr>
+                        </thead>
+                        <tbody id="lista-setores" class="divide-y divide-slate-200 text-sm">
+                            <!-- Preenchido via JavaScript -->
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+            
+        </div>
+    </main>
+
+    <script type="module" src="js/setores.js"></script>
+</body>
+</html>
