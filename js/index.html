@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login - Almoxarifado da Saúde de Avaré</title>
+    <!-- Adicionando Tailwind CSS via CDN para acelerar e padronizar o design -->
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-gray-100 h-screen flex items-center justify-center">
+
+    <div class="bg-white p-8 rounded-lg shadow-md w-full max-w-md">
+        <div class="text-center mb-6">
+            <h1 class="text-2xl font-bold text-blue-700">Almoxarifado da Saúde</h1>
+            <p class="text-gray-500 text-sm mt-1">Prefeitura da Estância Turística de Avaré</p>
+        </div>
+
+        <form id="login-form" class="space-y-4">
+            <div>
+                <label for="email" class="block text-sm font-medium text-gray-700">E-mail Oficial</label>
+                <input type="email" id="email" required 
+                    class="mt-1 block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-blue-500 focus:border-blue-500">
+            </div>
+
+            <div>
+                <label for="senha" class="block text-sm font-medium text-gray-700">Senha</label>
+                <input type="password" id="senha" required 
+                    class="mt-1 block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-blue-500 focus:border-blue-500">
+            </div>
+
+            <div id="msg-erro" class="text-red-500 text-sm hidden text-center"></div>
+
+            <button type="submit" id="btn-login"
+                class="w-full flex justify-center py-2 px-4 border border-transparent rounded-md shadow-sm text-sm font-medium text-white bg-blue-600 hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500 transition-colors">
+                Entrar no Sistema
+            </button>
+        </form>
+    </div>
+
+    <!-- Script de Autenticação -->
+    <script type="module" src="js/auth.js"></script>
+</body>
+</html>
