@@ -32,7 +32,7 @@ document.addEventListener('DOMContentLoaded', () => {
         });
 
         if (error) {
-            msgErro.textContent = 'E-mail ou senha incorretos. Tente novamente.';
+            msgErro.textContent = `Erro real: ${error.message}`;
             msgErro.classList.remove('hidden');
             btnLogin.textContent = 'Entrar no Sistema';
             btnLogin.disabled = false;
