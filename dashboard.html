@@ -1,6 +1,49 @@
-<nav class="flex-1 p-4 space-y-2">
-    <a href="dashboard.html" class="block py-2.5 px-4 rounded transition bg-blue-900">Início</a>
-    <a href="#" class="block py-2.5 px-4 rounded transition hover:bg-blue-700">Autorizações (AFs)</a>
-    <a href="fornecedores.html" class="block py-2.5 px-4 rounded transition hover:bg-blue-700">Fornecedores</a>
-    <a href="#" class="block py-2.5 px-4 rounded transition hover:bg-blue-700">Setores</a>
-</nav>
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Painel - Almoxarifado da Saúde de Avaré</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-gray-50 flex h-screen overflow-hidden">
+
+    <!-- Menu Lateral (Sidebar) -->
+    <aside class="w-64 bg-blue-800 text-white flex flex-col">
+        <div class="p-4 text-center border-b border-blue-700">
+            <h2 class="text-lg font-bold">Almoxarifado</h2>
+            <p class="text-xs text-blue-300">Painel de Controle</p>
+        </div>
+        
+        <nav class="flex-1 p-4 space-y-2">
+            <a href="dashboard.html" class="block py-2.5 px-4 rounded transition bg-blue-900">Início</a>
+            <a href="#" class="block py-2.5 px-4 rounded transition hover:bg-blue-700">Autorizações (AFs)</a>
+            <a href="fornecedores.html" class="block py-2.5 px-4 rounded transition hover:bg-blue-700">Fornecedores</a>
+            <a href="#" class="block py-2.5 px-4 rounded transition hover:bg-blue-700">Setores</a>
+        </nav>
+
+        <div class="p-4 border-t border-blue-700">
+            <button id="btn-logout" class="w-full bg-red-600 hover:bg-red-700 text-white font-bold py-2 px-4 rounded transition">
+                Sair
+            </button>
+        </div>
+    </aside>
+
+    <!-- Conteúdo Principal -->
+    <main class="flex-1 p-8 overflow-y-auto">
+        <header class="flex justify-between items-center mb-8 border-b pb-4">
+            <h1 class="text-2xl font-semibold text-gray-800">Visão Geral</h1>
+            <div class="text-sm text-gray-600">
+                Logado como: <span id="user-email" class="font-bold text-blue-600">Carregando...</span>
+            </div>
+        </header>
+
+        <div class="bg-white p-6 rounded-lg shadow-sm border border-gray-100">
+            <p class="text-gray-600">Bem-vindo ao novo sistema oficial do Almoxarifado da Saúde. A estrutura do banco de dados já está pronta no Supabase!</p>
+        </div>
+    </main>
+
+    <!-- Script do Dashboard -->
+    <script type="module" src="js/dashboard.js"></script>
+</body>
+</html>
