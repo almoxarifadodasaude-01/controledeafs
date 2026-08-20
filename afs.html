@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Autorizações (AFs) - Almoxarifado da Saúde</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-gray-50 flex h-screen overflow-hidden">
+
+    <!-- Menu Lateral -->
+    <aside class="w-64 bg-blue-800 text-white flex flex-col">
+        <div class="p-4 text-center border-b border-blue-700">
+            <h2 class="text-lg font-bold">Almoxarifado</h2>
+        </div>
+        <nav class="flex-1 p-4 space-y-2">
+            <a href="dashboard.html" class="block py-2.5 px-4 rounded transition hover:bg-blue-700">Início</a>
+            <a href="afs.html" class="block py-2.5 px-4 rounded transition bg-blue-900">Autorizações (AFs)</a>
+            <a href="fornecedores.html" class="block py-2.5 px-4 rounded transition hover:bg-blue-700">Fornecedores</a>
+            <a href="#" class="block py-2.5 px-4 rounded transition hover:bg-blue-700">Setores</a>
+        </nav>
+    </aside>
+
+    <!-- Conteúdo Principal -->
+    <main class="flex-1 p-8 overflow-y-auto">
+        <header class="flex justify-between items-center mb-8 border-b pb-4">
+            <h1 class="text-2xl font-semibold text-gray-800">Autorizações de Fornecimento (AFs)</h1>
+        </header>
+
+        <!-- Formulário para Nova AF (Versão Simplificada) -->
+        <div class="bg-white p-6 rounded-lg shadow-sm border border-gray-100 mb-8">
+            <h2 class="text-lg font-medium mb-4 text-blue-700">Nova AF</h2>
+            <form id="form-af" class="flex flex-wrap gap-4">
+                <input type="text" id="numero_af" placeholder="Nº da AF (Ex: 123/2026)" required class="w-48 px-3 py-2 border border-gray-300 rounded-md focus:ring-blue-500 outline-none">
+                
+                <!-- Este select será preenchido pelo JavaScript com os fornecedores do banco -->
+                <select id="fornecedor_id" required class="flex-1 min-w-[200px] px-3 py-2 border border-gray-300 rounded-md focus:ring-blue-500 outline-none">
+                    <option value="">Selecione o Fornecedor...</option>
+                </select>
+
+                <input type="date" id="prazo_entrega" class="w-40 px-3 py-2 border border-gray-300 rounded-md focus:ring-blue-500 outline-none">
+                
+                <button type="submit" class="bg-blue-600 hover:bg-blue-700 text-white px-6 py-2 rounded-md font-medium transition">Salvar AF</button>
+            </form>
+        </div>
+
+        <!-- Lista de AFs -->
+        <div class="bg-white p-6 rounded-lg shadow-sm border border-gray-100">
+            <h2 class="text-lg font-medium mb-4 text-blue-700">AFs Cadastradas</h2>
+            <div id="lista-afs" class="space-y-3">
+                <!-- Preenchido via JavaScript -->
+            </div>
+        </div>
+    </main>
+
+    <script type="module" src="js/afs.js"></script>
+</body>
+</html>
